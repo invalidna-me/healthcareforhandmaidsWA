@@ -37,11 +37,11 @@
 }
 
 .left {
-  width: 80%;
+  width: 60%;
 }
 
 .right {
-  width: 20%;
+  width: 40%;
 }
 
 /* Clear floats after the columns */
@@ -56,16 +56,16 @@
 </head>
 <body>
 <center>
-<h2>Healthcare for Handmaids</h2>
+<h1>Healthcare for Handmaids</h1>
 </center>
 
 
 <div class="row">
-  <div class="column left" style="background-color:#005BBB;">
+  <div class="column left" style="background-color:#63171b;">
     <div id="map" style="width: 1500px; height: 100%;"></div>
   </div>
-  <div class="column right" style="background-color:#FFD500;">
-    <h2>Not healthcare providers:</h2>
+  <div class="column right" style="background-image: url(handmaid.jpg)">
+    <h2>Get your reproductive opression here:</h2>
     <p>
     
     <div style="height:800px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:scroll;">
@@ -368,87 +368,96 @@ Yakima, WA 98902<br>
 
 <script>
 
-	var map = L.map('map').setView([47.457, -120.673], 8);
+	var map = L.map('map').setView([47.457, -120.673], 7);
 
 	var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		maxZoom: 19,
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
+	
+	var redIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
 
 
-	var marker = L.marker([46.970860, -123.715477]).addTo(map).bindPopup('Heart & Hands Pregnancy Care Center')
-marker = L.marker([47.302970, -122.221500]).addTo(map).bindPopup('Pregnancy Aid of Auburn')
-marker = L.marker([45.781520, -122.555190]).addTo(map).bindPopup('Options 360 Pregnancy Clinic')
-marker = L.marker([45.780047, -122.556953]).addTo(map).bindPopup('Bethany Christian Services')
-marker = L.marker([48.748590, -122.476250]).addTo(map).bindPopup('Whatcom County Pregnancy Clinic')
-marker = L.marker([47.606840, -122.637260]).addTo(map).bindPopup('Pregnancy Resource Services')
-marker = L.marker([45.5885993, -122.3932233]).addTo(map).bindPopup('Community Pregnancy Clinic of Camas Washougal')
-marker = L.marker([46.7189615, -122.9663674]).addTo(map).bindPopup('Care Center Life Choices')
-marker = L.marker([48.5487114, -117.9070419]).addTo(map).bindPopup('N.E.W. Family Life Services Crisis Pregnancy Center')
-marker = L.marker([48.5360608, -121.7645469]).addTo(map).bindPopup('Upper Skagit Pregnancy Choices')
-marker = L.marker([47.4005927, -122.3252857]).addTo(map).bindPopup('Pregnancy Aid of South King County – Des Moines')
-marker = L.marker([47.2467126, -122.2776081]).addTo(map).bindPopup('Step By Step')
-marker = L.marker([46.9957055, -120.546436]).addTo(map).bindPopup('Care Net Pregnancy Center of Kittitas County')
-marker = L.marker([47.3246076, -119.548482]).addTo(map).bindPopup('Pregnancy Support Services of Ephrata')
-marker = L.marker([47.981638, -122.2032429]).addTo(map).bindPopup('Catholic Community Services')
-marker = L.marker([47.9788137, -122.2139176]).addTo(map).bindPopup('Pregnancy Aid of Everett')
-marker = L.marker([47.9604726, -122.2095695]).addTo(map).bindPopup('Pregnancy Resource Center of Snohomish County')
-marker = L.marker([47.3122472, -122.3152372]).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
-marker = L.marker([47.9461787, -124.3913361]).addTo(map).bindPopup('The Caring Place')
-marker = L.marker([47.3094937, -122.5759575]).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
-marker = L.marker([45.8223982, -120.8228575]).addTo(map).bindPopup('Goldendale Pregnancy Resource Center')
-marker = L.marker([46.2532718, -119.9015423]).addTo(map).bindPopup('Life Options Pregnancy Center')
-marker = L.marker([47.5451562, -122.0595052]).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
-marker = L.marker([47.7600185, -122.252404]).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
-marker = L.marker([47.3685886, -122.231372]).addTo(map).bindPopup('Pregnancy Aid of Kent')
-marker = L.marker([47.3831922, -122.249208]).addTo(map).bindPopup('South King County Family Center')
-marker = L.marker([47.158453, -122.5211423]).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
-marker = L.marker([48.0334479, -122.40185]).addTo(map).bindPopup('Pregnancy Aid of Whidbey Island')
-marker = L.marker([48.0364398, -122.4047549]).addTo(map).bindPopup('Pregnancy Care Clinic')
-marker = L.marker([46.1316796, -122.9539447]).addTo(map).bindPopup('Birthright of Longview')
-marker = L.marker([46.1316404, -122.9328649]).addTo(map).bindPopup('Caring Pregnancy Center')
-marker = L.marker([48.9522413, -122.4416242]).addTo(map).bindPopup('Lynden Human Life & Great Expectations')
-marker = L.marker([47.8389481, -122.2993909]).addTo(map).bindPopup('Next Step Pregnancy Services')
-marker = L.marker([47.1113924, -119.2620033]).addTo(map).bindPopup('Crossroads Resource Center')
-marker = L.marker([48.4219378, -122.3432758]).addTo(map).bindPopup('Pregnancy Choices')
-marker = L.marker([48.292808, -122.642876]).addTo(map).bindPopup('Pregnancy Care Clinic')
-marker = L.marker([48.379174, -119.5631668]).addTo(map).bindPopup('Pregnancy Center Okanogan')
-marker = L.marker([47.0480852, -122.8447046]).addTo(map).bindPopup('Care Net of Thurston County')
-marker = L.marker([47.0481456, -122.9001434]).addTo(map).bindPopup('Care Net of Thurston County')
-marker = L.marker([47.0403097, -122.884845]).addTo(map).bindPopup('Pregnancy Aid of Thurston County')
-marker = L.marker([46.2375351, -119.1193743]).addTo(map).bindPopup('Catholic Family and Child Services')
-marker = L.marker([46.2346155, -119.1070554]).addTo(map).bindPopup('Tri-Cities Pregnancy Network')
-marker = L.marker([48.1095009, -123.4299432]).addTo(map).bindPopup('My Choices Pregnancy & Family Services')
-marker = L.marker([47.5395478, -122.6405921]).addTo(map).bindPopup('Celebrate Life Pregnancy Crisis & Support Services')
-marker = L.marker([47.0969502, -122.2815616]).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
-marker = L.marker([47.4791578, -122.2137966]).addTo(map).bindPopup('LDS Family Services')
-marker = L.marker([46.2753163, -119.2732388]).addTo(map).bindPopup('Catholic Family Services')
-marker = L.marker([46.2737964, -119.2747969]).addTo(map).bindPopup('Tri-Cities Pregnancy Network')
-marker = L.marker([47.7188478, -122.2947777]).addTo(map).bindPopup('Bethany Christian Services')
-marker = L.marker([47.5163713, -122.3596704]).addTo(map).bindPopup('Birthright of Seattle')
-marker = L.marker([47.6012068, -122.3016114]).addTo(map).bindPopup('Catholic Community Services')
-marker = L.marker([47.6012068, -122.3016114]).addTo(map).bindPopup('Pregnancy & Parenting Support Program')
-marker = L.marker([48.086365, -123.1014992]).addTo(map).bindPopup('My Choices Pregnancy & Family Services')
-marker = L.marker([47.2243782, -123.1213084]).addTo(map).bindPopup('Care Net Pregnancy Center of Mason County')
-marker = L.marker([47.7721727, -122.3456496]).addTo(map).bindPopup('Angelorum')
-marker = L.marker([47.6511828, -117.4108068]).addTo(map).bindPopup('Catholic Family Services')
-marker = L.marker([47.6824075, -117.4374161]).addTo(map).bindPopup('Life Services')
-marker = L.marker([47.6574741, -117.4136743]).addTo(map).bindPopup('Lutheran Community Services')
-marker = L.marker([47.6578577, -117.2479875]).addTo(map).bindPopup('LDS Family Services')
-marker = L.marker([46.3240812, -120.0112863]).addTo(map).bindPopup('')
-marker = L.marker([46.3248588, -119.9986963]).addTo(map).bindPopup('Life Options Pregnancy Center')
-marker = L.marker([47.2571124, -122.4549894]).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
-marker = L.marker([47.2548212, -122.4423369]).addTo(map).bindPopup('Pregnancy Aid of Tacoma')
-marker = L.marker([45.634299, -122.6696879]).addTo(map).bindPopup('Birthright')
-marker = L.marker([45.6285429, -122.6487086]).addTo(map).bindPopup('Options 360 Pregnancy Clinic: Vancouver Clinic')
-marker = L.marker([45.6615771, -122.5608727]).addTo(map).bindPopup('Options 360 Pregnancy Clinic: Orchards Clinic')
-marker = L.marker([46.0606172, -118.3453229]).addTo(map).bindPopup('Birthright')
-marker = L.marker([46.0630365, -118.3437206]).addTo(map).bindPopup('Catholic Charities')
-marker = L.marker([47.4179166, -120.314293]).addTo(map).bindPopup('Life Choices of Wenatchee Valley')
-marker = L.marker([47.7619509, -122.1139388]).addTo(map).bindPopup('Special Delivery')
-marker = L.marker([46.5933831, -120.5216844]).addTo(map).bindPopup('Birthright')
-marker = L.marker([46.6083959, -120.5051244]).addTo(map).bindPopup('Catholic Family & Child Services')
-marker = L.marker([46.5939629, -120.5219524]).addTo(map).bindPopup('Life Choices of Yakima');
+	var marker = L.marker([46.970860, -123.715477], {icon: redIcon}).addTo(map).bindPopup('Heart & Hands Pregnancy Care Center')
+marker = L.marker([47.302970, -122.221500], {icon: redIcon}).addTo(map).bindPopup('Pregnancy Aid of Auburn')
+marker = L.marker([45.781520, -122.555190], {icon: redIcon}).addTo(map).bindPopup('Options 360 Pregnancy Clinic')
+marker = L.marker([45.780047, -122.556953], {icon: redIcon}).addTo(map).bindPopup('Bethany Christian Services')
+marker = L.marker([48.748590, -122.476250], {icon: redIcon}).addTo(map).bindPopup('Whatcom County Pregnancy Clinic')
+marker = L.marker([47.606840, -122.637260], {icon: redIcon}).addTo(map).bindPopup('Pregnancy Resource Services')
+marker = L.marker([45.5885993, -122.3932233], {icon: redIcon}).addTo(map).bindPopup('Community Pregnancy Clinic of Camas Washougal')
+marker = L.marker([46.7189615, -122.9663674], {icon: redIcon}).addTo(map).bindPopup('Care Center Life Choices')
+marker = L.marker([48.5487114, -117.9070419], {icon: redIcon}).addTo(map).bindPopup('N.E.W. Family Life Services Crisis Pregnancy Center')
+marker = L.marker([48.5360608, -121.7645469], {icon: redIcon}).addTo(map).bindPopup('Upper Skagit Pregnancy Choices')
+marker = L.marker([47.4005927, -122.3252857], {icon: redIcon}).addTo(map).bindPopup('Pregnancy Aid of South King County – Des Moines')
+marker = L.marker([47.2467126, -122.2776081], {icon: redIcon}).addTo(map).bindPopup('Step By Step')
+marker = L.marker([46.9957055, -120.546436], {icon: redIcon}).addTo(map).bindPopup('Care Net Pregnancy Center of Kittitas County')
+marker = L.marker([47.3246076, -119.548482], {icon: redIcon}).addTo(map).bindPopup('Pregnancy Support Services of Ephrata')
+marker = L.marker([47.981638, -122.2032429], {icon: redIcon}).addTo(map).bindPopup('Catholic Community Services')
+marker = L.marker([47.9788137, -122.2139176], {icon: redIcon}).addTo(map).bindPopup('Pregnancy Aid of Everett')
+marker = L.marker([47.9604726, -122.2095695], {icon: redIcon}).addTo(map).bindPopup('Pregnancy Resource Center of Snohomish County')
+marker = L.marker([47.3122472, -122.3152372], {icon: redIcon}).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
+marker = L.marker([47.9461787, -124.3913361], {icon: redIcon}).addTo(map).bindPopup('The Caring Place')
+marker = L.marker([47.3094937, -122.5759575], {icon: redIcon}).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
+marker = L.marker([45.8223982, -120.8228575], {icon: redIcon}).addTo(map).bindPopup('Goldendale Pregnancy Resource Center')
+marker = L.marker([46.2532718, -119.9015423], {icon: redIcon}).addTo(map).bindPopup('Life Options Pregnancy Center')
+marker = L.marker([47.5451562, -122.0595052], {icon: redIcon}).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
+marker = L.marker([47.7600185, -122.252404], {icon: redIcon}).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
+marker = L.marker([47.3685886, -122.231372], {icon: redIcon}).addTo(map).bindPopup('Pregnancy Aid of Kent')
+marker = L.marker([47.3831922, -122.249208], {icon: redIcon}).addTo(map).bindPopup('South King County Family Center')
+marker = L.marker([47.158453, -122.5211423], {icon: redIcon}).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
+marker = L.marker([48.0334479, -122.40185], {icon: redIcon}).addTo(map).bindPopup('Pregnancy Aid of Whidbey Island')
+marker = L.marker([48.0364398, -122.4047549], {icon: redIcon}).addTo(map).bindPopup('Pregnancy Care Clinic')
+marker = L.marker([46.1316796, -122.9539447], {icon: redIcon}).addTo(map).bindPopup('Birthright of Longview')
+marker = L.marker([46.1316404, -122.9328649], {icon: redIcon}).addTo(map).bindPopup('Caring Pregnancy Center')
+marker = L.marker([48.9522413, -122.4416242], {icon: redIcon}).addTo(map).bindPopup('Lynden Human Life & Great Expectations')
+marker = L.marker([47.8389481, -122.2993909], {icon: redIcon}).addTo(map).bindPopup('Next Step Pregnancy Services')
+marker = L.marker([47.1113924, -119.2620033], {icon: redIcon}).addTo(map).bindPopup('Crossroads Resource Center')
+marker = L.marker([48.4219378, -122.3432758], {icon: redIcon}).addTo(map).bindPopup('Pregnancy Choices')
+marker = L.marker([48.292808, -122.642876], {icon: redIcon}).addTo(map).bindPopup('Pregnancy Care Clinic')
+marker = L.marker([48.379174, -119.5631668], {icon: redIcon}).addTo(map).bindPopup('Pregnancy Center Okanogan')
+marker = L.marker([47.0480852, -122.8447046], {icon: redIcon}).addTo(map).bindPopup('Care Net of Thurston County')
+marker = L.marker([47.0481456, -122.9001434], {icon: redIcon}).addTo(map).bindPopup('Care Net of Thurston County')
+marker = L.marker([47.0403097, -122.884845], {icon: redIcon}).addTo(map).bindPopup('Pregnancy Aid of Thurston County')
+marker = L.marker([46.2375351, -119.1193743], {icon: redIcon}).addTo(map).bindPopup('Catholic Family and Child Services')
+marker = L.marker([46.2346155, -119.1070554], {icon: redIcon}).addTo(map).bindPopup('Tri-Cities Pregnancy Network')
+marker = L.marker([48.1095009, -123.4299432], {icon: redIcon}).addTo(map).bindPopup('My Choices Pregnancy & Family Services')
+marker = L.marker([47.5395478, -122.6405921], {icon: redIcon}).addTo(map).bindPopup('Celebrate Life Pregnancy Crisis & Support Services')
+marker = L.marker([47.0969502, -122.2815616], {icon: redIcon}).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
+marker = L.marker([47.4791578, -122.2137966], {icon: redIcon}).addTo(map).bindPopup('LDS Family Services')
+marker = L.marker([46.2753163, -119.2732388], {icon: redIcon}).addTo(map).bindPopup('Catholic Family Services')
+marker = L.marker([46.2737964, -119.2747969], {icon: redIcon}).addTo(map).bindPopup('Tri-Cities Pregnancy Network')
+marker = L.marker([47.7188478, -122.2947777], {icon: redIcon}).addTo(map).bindPopup('Bethany Christian Services')
+marker = L.marker([47.5163713, -122.3596704], {icon: redIcon}).addTo(map).bindPopup('Birthright of Seattle')
+marker = L.marker([47.6012068, -122.3016114], {icon: redIcon}).addTo(map).bindPopup('Catholic Community Services')
+marker = L.marker([47.6012068, -122.3016114], {icon: redIcon}).addTo(map).bindPopup('Pregnancy & Parenting Support Program')
+marker = L.marker([48.086365, -123.1014992], {icon: redIcon}).addTo(map).bindPopup('My Choices Pregnancy & Family Services')
+marker = L.marker([47.2243782, -123.1213084], {icon: redIcon}).addTo(map).bindPopup('Care Net Pregnancy Center of Mason County')
+marker = L.marker([47.7721727, -122.3456496], {icon: redIcon}).addTo(map).bindPopup('Angelorum')
+marker = L.marker([47.6511828, -117.4108068], {icon: redIcon}).addTo(map).bindPopup('Catholic Family Services')
+marker = L.marker([47.6824075, -117.4374161], {icon: redIcon}).addTo(map).bindPopup('Life Services')
+marker = L.marker([47.6574741, -117.4136743], {icon: redIcon}).addTo(map).bindPopup('Lutheran Community Services')
+marker = L.marker([47.6578577, -117.2479875], {icon: redIcon}).addTo(map).bindPopup('LDS Family Services')
+marker = L.marker([46.3240812, -120.0112863], {icon: redIcon}).addTo(map).bindPopup('')
+marker = L.marker([46.3248588, -119.9986963], {icon: redIcon}).addTo(map).bindPopup('Life Options Pregnancy Center')
+marker = L.marker([47.2571124, -122.4549894], {icon: redIcon}).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
+marker = L.marker([47.2548212, -122.4423369], {icon: redIcon}).addTo(map).bindPopup('Pregnancy Aid of Tacoma')
+marker = L.marker([45.634299, -122.6696879], {icon: redIcon}).addTo(map).bindPopup('Birthright')
+marker = L.marker([45.6285429, -122.6487086], {icon: redIcon}).addTo(map).bindPopup('Options 360 Pregnancy Clinic: Vancouver Clinic')
+marker = L.marker([45.6615771, -122.5608727], {icon: redIcon}).addTo(map).bindPopup('Options 360 Pregnancy Clinic: Orchards Clinic')
+marker = L.marker([46.0606172, -118.3453229], {icon: redIcon}).addTo(map).bindPopup('Birthright')
+marker = L.marker([46.0630365, -118.3437206], {icon: redIcon}).addTo(map).bindPopup('Catholic Charities')
+marker = L.marker([47.4179166, -120.314293], {icon: redIcon}).addTo(map).bindPopup('Life Choices of Wenatchee Valley')
+marker = L.marker([47.7619509, -122.1139388], {icon: redIcon}).addTo(map).bindPopup('Special Delivery')
+marker = L.marker([46.5933831, -120.5216844], {icon: redIcon}).addTo(map).bindPopup('Birthright')
+marker = L.marker([46.6083959, -120.5051244], {icon: redIcon}).addTo(map).bindPopup('Catholic Family & Child Services')
+marker = L.marker([46.5939629, -120.5219524], {icon: redIcon}).addTo(map).bindPopup('Life Choices of Yakima');
 
 
 
@@ -458,13 +467,13 @@ marker = L.marker([46.5939629, -120.5219524]).addTo(map).bindPopup('Life Choices
 		fillColor: '#f03',
 		fillOpacity: 0.5,
 		radius: 500
-	}).addTo(map).bindPopup('I am a circle.');
+	}, {icon: redIcon}).addTo(map).bindPopup('I am a circle.');
 
 	var polygon = L.polygon([
 		[51.509, -0.08],
 		[51.503, -0.06],
 		[51.51, -0.047]
-	]).addTo(map).bindPopup('I am a polygon.');
+	], {icon: redIcon}).addTo(map).bindPopup('I am a polygon.');
 
 
 	var popup = L.popup()
