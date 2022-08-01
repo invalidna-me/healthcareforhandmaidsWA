@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Healthcare for Handmaids</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		.leaflet-container {
+			height: 400px;
+			width: 600px;
+			max-width: 100%;
+			max-height: 100%;
+		}
+		* {
+  box-sizing: border-box;
+}
+
+ html, body {
+  height: 100%;
+}
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 900px;
+}
+
+.left {
+  width: 80%;
+}
+
+.right {
+  width: 20%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+	</style>
+
+	
+</head>
+<body>
+<center>
+<h2>Healthcare for Handmaids</h2>
+</center>
+
+
+<div class="row">
+  <div class="column left" style="background-color:#005BBB;">
+    <div id="map" style="width: 1500px; height: 100%;"></div>
+  </div>
+  <div class="column right" style="background-color:#FFD500;">
+    <h2>Not healthcare providers:</h2>
+    <p>
+    
+    <div style="height:800px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:scroll;">
+
+Heart & Hands Pregnancy Care Center<br>
+5611 Olympic Highway<br>
+Aberdeen, WA 98520<br>
+<br>
+Pregnancy Aid of Auburn<br>
+515 F Street, Ste. 1<br>
+Auburn, WA 98002<br>
+<br>
+Options 360 Pregnancy Clinic<br>
+1706 W. Main St., Ste. 115<br>
+Battle Ground, WA 98604<br>
+<br>
+Bethany Christian Services<br>
+1031 North State St. #108<br>
+Bellingham, WA 98225<br>
+<br>
+Whatcom County Pregnancy Clinic<br>
+1310 North State St.<br>
+Bellingham, WA 98225<br>
+<br>
+Pregnancy Resource Services<br>
+1736 NE Riddell Drive<br>
+Bremerton, WA 98310<br>
+<br>
+Community Pregnancy Clinic of Camas Washougal<br>
+1542 NE 3rd Ave.<br>
+Camas, WA<br>
+<br>
+Care Center Life Choices<br>
+1017 West Main St.<br>
+Centralia, WA 98531<br>
+<br>
+N.E.W. Family Life Services Crisis Pregnancy Center<br>
+144 W. 5th Avenue<br>
+Colville, WA 99114<br>
+<br>
+Upper Skagit Pregnancy Choices<br>
+45080 Fir St., Suite B<br>
+Concrete, WA 98273<br>
+<br>
+Pregnancy Aid of South King County – Des Moines<br>
+730 S. 225th St.<br>
+Des Moines, WA<br>
+<br>
+Step By Step<br>
+1120 114th Ave E<br>
+Edgewood WA 98372<br>
+<br>
+Care Net Pregnancy Center of Kittitas County<br>
+111 East 4th Avenue<br>
+Ellensburg, WA 98926<br>
+<br>
+Pregnancy Support Services of Ephrata<br>
+153 4th Ave. NW<br>
+Ephrata, WA 98823 509.754.4357<br>
+<br>
+Catholic Community Services<br>
+1918 Everett Ave.<br>
+Everett, WA 98201<br>
+<br>
+Pregnancy Aid of Everett<br>
+2913 West Marine View Dr.<br>
+Everett, WA 98201<br>
+<br>
+Pregnancy Resource Center of Snohomish County<br>
+4310 Hoyt Ave.<br>
+Everett, WA 98203<br>
+<br>
+Care Net Pregnancy & Family Services<br>
+1414 S. 324th St. #B-105<br>
+Federal Way, WA 98003<br>
+<br>
+The Caring Place<br>
+481 West E St.<br>
+Forks, WA 98331<br>
+<br>
+Care Net Pregnancy & Family Services<br>
+2727 Hollycroft St., Suite 130<br>
+Gig Harbor, WA 98335<br>
+<br>
+Goldendale Pregnancy Resource Center<br>
+101 W. Main St.<br>
+Goldendale, WA<br>
+<br>
+Life Options Pregnancy Center<br>
+100 East 3rd St.<br>
+Grandview, WA 98930<br>
+<br>
+Care Net Pregnancy & Family Services<br>
+1495 NW Gilman Blvd., Suite 6<br>
+Issaquah, WA 98207<br>
+<br>
+Care Net Pregnancy & Family Services<br>
+6524 NE 181st St., Suite 9 / P.O. Box 82828<br>
+Kenmore, WA 98028<br>
+<br>
+Pregnancy Aid of Kent<br>
+1209 S. Central #204<br>
+Kent, WA 98032<br>
+<br>
+South King County Family Center<br>
+1229 W. Smith Street<br>
+Kent, WA 98032<br>
+<br>
+Care Net Pregnancy & Family Services<br>
+10828 Gravelly Lake Dr. SW, Suite 101<br>
+Lakewood, WA 98498<br>
+<br>
+Pregnancy Aid of Whidbey Island<br>
+816 Camano Ave. / P.O. Box 482<br>
+Langley, WA 98260<br>
+<br>
+Pregnancy Care Clinic<br>
+6th & Cascade<br>
+Langley, WA 98260<br>
+<br>
+Birthright of Longview<br>
+676 26th Avenue<br>
+Longview, WA 98632<br>
+<br>
+Caring Pregnancy Center<br>
+1010 Fir Street<br>
+Longview, WA 98632<br>
+<br>
+Lynden Human Life & Great Expectations<br>
+8575 Bender Rd.<br>
+Lynden, WA 98264<br>
+<br>
+Next Step Pregnancy Services<br>
+17602 Hwy 99, Suite 170<br>
+Lynnwood, WA 98037<br>
+<br>
+Crossroads Resource Center<br>
+1555 S. Pilgrim Suite C<br>
+Moses Lake, WA 98837<br>
+<br>
+Pregnancy Choices<br>
+617 W. Division Street<br>
+Mount Vernon, WA 98273<br>
+<br>
+Pregnancy Care Clinic<br>
+670 SE Midway Blvd.<br>
+Oak Harbor, WA 98277<br>
+<br>
+Pregnancy Center Okanogan<br>
+1152 Second Ave. North<br>
+Okanogan, WA 98840<br>
+<br>
+Care Net of Thurston County<br>
+125 Lilly Road Northeast<br>
+Olympia, WA 98506<br>
+<br>
+Care Net of Thurston County<br>
+413 Franklin Street<br>
+Olympia, WA 98506<br>
+<br>
+Pregnancy Aid of Thurston County<br>
+1021 Boundary St. SE<br>
+Olympia, WA 98501<br>
+<br>
+Catholic Family and Child Services<br>
+2110 W. Henry St.<br>
+Pasco, WA 99301<br>
+<br>
+Tri-Cities Pregnancy Network<br>
+817 N. 14th St.<br>
+Pasco, WA 99301<br>
+<br>
+My Choices Pregnancy & Family Services<br>
+535 E. 8th Street<br>
+Port Angeles, WA 98362<br>
+<br>
+Celebrate Life Pregnancy Crisis & Support Services<br>
+510 Dekalb St. #F<br>
+Port Orchard, WA 98366<br>
+<br>
+Care Net Pregnancy & Family Services<br>
+11102 Sunrise Blvd. E, Suite 107<br>
+Puyallup, WA 98374<br>
+<br>
+LDS Family Services<br>
+220 South 3rd Place<br>
+Renton, WA 98057<br>
+<br>
+Catholic Family Services<br>
+710 G Gearoge Washington Way<br>
+Richland, WA 99352<br>
+<br>
+Tri-Cities Pregnancy Network<br>
+636 Jadwin Ave., Ste. C<br>
+Richland, WA 99352<br>
+<br>
+Bethany Christian Services<br>
+12360 Lake City Way Northeast #301<br>
+Seattle, WA 98125<br>
+<br>
+Birthright of Seattle<br>
+9641 20th Avenue Southwest<br>
+Seattle, WA 98106<br>
+<br>
+Catholic Community Services<br>
+100 23rd Avenue South<br>
+Seattle, WA 98114<br>
+<br>
+Pregnancy & Parenting Support Program<br>
+4250 South Mead St.<br>
+Seattle, WA 98118<br>
+<br>
+My Choices Pregnancy & Family Services<br>
+640 N. Sequim Ave.<br>
+Sequim, WA 98382<br>
+<br>
+Care Net Pregnancy Center of Mason County<br>
+2233 Jefferson Street / P.O. Box 1581<br>
+Shelton, WA 98584<br>
+<br>
+Angelorum<br>
+19662 Aurora Ave. North #1<br>
+Shoreline, WA 98133<br>
+<br>
+Catholic Family Services<br>
+12 East 5th Ave.<br>
+Spokane, WA 99202<br>
+<br>
+Life Services<br>
+2659 N. Ash St.<br>
+Spokane, WA 99205<br>
+<br>
+Lutheran Community Services<br>
+210 W. Sprague Ave.<br>
+Spokane, WA 99201<br>
+<br>
+LDS Family Services<br>
+11707 East Sprague Ave. #202<br>
+Spokane Valley, WA 99206<br>
+<br>
+Birthright<br>
+420 South 7th Street<br>
+Sunnyside, WA 98944<br>
+<br>
+Life Options Pregnancy Center<br>
+1616 E. Gregory Ave. Ext.<br>
+Sunnyside, WA 98944<br>
+<br>
+Care Net Pregnancy & Family Services<br>
+1209 6th Ave.<br>
+Tacoma, WA 98405-4004<br>
+<br>
+Pregnancy Aid of Tacoma<br>
+902 Market St.<br>
+Tacoma, WA 98402<br>
+<br>
+Birthright<br>
+214 East 17th St.<br>
+Vancouver, WA 98663<br>
+<br>
+Options 360 Pregnancy Clinic: Vancouver Clinic<br>
+2128 E. Mill Plain Blvd.<br>
+Vancouver, WA 98661<br>
+<br>
+Options 360 Pregnancy Clinic: Orchards Clinic<br>
+5500 NE 109th Ct., Ste. C<br>
+Vancouver, WA 98662<br>
+<br>
+Birthright<br>
+609 West Birch Street<br>
+Walla Walla, WA 99362<br>
+<br>
+Catholic Charities<br>
+408 W. Poplar St.<br>
+Walla Walla, WA 99362<br>
+<br>
+Life Choices of Wenatchee Valley<br>
+300 Okanogan Ave., Suite 1C<br>
+Wenatchee, WA 98801<br>
+<br>
+Special Delivery<br>
+16902 Northeast Woodinville Duvall Rd.<br>
+Woodinville, WA 98072<br>
+<br>
+Birthright<br>
+313 S. 11th Ave. #A<br>
+Yakima, WA 98902<br>
+<br>
+Catholic Family & Child Services<br>
+303 East D Street<br>
+Yakima, WA 98901<br>
+<br>
+Life Choices of Yakima<br>
+305 S. 11th Ave., Suite #1<br>
+Yakima, WA 98902<br>
+</div>
+    </p>
+  </div>
+</div>
+
+<script>
+
+	var map = L.map('map').setView([47.457, -120.673], 8);
+
+	var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+
+
+	var marker = L.marker([46.970860, -123.715477]).addTo(map).bindPopup('Heart & Hands Pregnancy Care Center')
+marker = L.marker([47.302970, -122.221500]).addTo(map).bindPopup('Pregnancy Aid of Auburn')
+marker = L.marker([45.781520, -122.555190]).addTo(map).bindPopup('Options 360 Pregnancy Clinic')
+marker = L.marker([45.780047, -122.556953]).addTo(map).bindPopup('Bethany Christian Services')
+marker = L.marker([48.748590, -122.476250]).addTo(map).bindPopup('Whatcom County Pregnancy Clinic')
+marker = L.marker([47.606840, -122.637260]).addTo(map).bindPopup('Pregnancy Resource Services')
+marker = L.marker([45.5885993, -122.3932233]).addTo(map).bindPopup('Community Pregnancy Clinic of Camas Washougal')
+marker = L.marker([46.7189615, -122.9663674]).addTo(map).bindPopup('Care Center Life Choices')
+marker = L.marker([48.5487114, -117.9070419]).addTo(map).bindPopup('N.E.W. Family Life Services Crisis Pregnancy Center')
+marker = L.marker([48.5360608, -121.7645469]).addTo(map).bindPopup('Upper Skagit Pregnancy Choices')
+marker = L.marker([47.4005927, -122.3252857]).addTo(map).bindPopup('Pregnancy Aid of South King County – Des Moines')
+marker = L.marker([47.2467126, -122.2776081]).addTo(map).bindPopup('Step By Step')
+marker = L.marker([46.9957055, -120.546436]).addTo(map).bindPopup('Care Net Pregnancy Center of Kittitas County')
+marker = L.marker([47.3246076, -119.548482]).addTo(map).bindPopup('Pregnancy Support Services of Ephrata')
+marker = L.marker([47.981638, -122.2032429]).addTo(map).bindPopup('Catholic Community Services')
+marker = L.marker([47.9788137, -122.2139176]).addTo(map).bindPopup('Pregnancy Aid of Everett')
+marker = L.marker([47.9604726, -122.2095695]).addTo(map).bindPopup('Pregnancy Resource Center of Snohomish County')
+marker = L.marker([47.3122472, -122.3152372]).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
+marker = L.marker([47.9461787, -124.3913361]).addTo(map).bindPopup('The Caring Place')
+marker = L.marker([47.3094937, -122.5759575]).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
+marker = L.marker([45.8223982, -120.8228575]).addTo(map).bindPopup('Goldendale Pregnancy Resource Center')
+marker = L.marker([46.2532718, -119.9015423]).addTo(map).bindPopup('Life Options Pregnancy Center')
+marker = L.marker([47.5451562, -122.0595052]).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
+marker = L.marker([47.7600185, -122.252404]).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
+marker = L.marker([47.3685886, -122.231372]).addTo(map).bindPopup('Pregnancy Aid of Kent')
+marker = L.marker([47.3831922, -122.249208]).addTo(map).bindPopup('South King County Family Center')
+marker = L.marker([47.158453, -122.5211423]).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
+marker = L.marker([48.0334479, -122.40185]).addTo(map).bindPopup('Pregnancy Aid of Whidbey Island')
+marker = L.marker([48.0364398, -122.4047549]).addTo(map).bindPopup('Pregnancy Care Clinic')
+marker = L.marker([46.1316796, -122.9539447]).addTo(map).bindPopup('Birthright of Longview')
+marker = L.marker([46.1316404, -122.9328649]).addTo(map).bindPopup('Caring Pregnancy Center')
+marker = L.marker([48.9522413, -122.4416242]).addTo(map).bindPopup('Lynden Human Life & Great Expectations')
+marker = L.marker([47.8389481, -122.2993909]).addTo(map).bindPopup('Next Step Pregnancy Services')
+marker = L.marker([47.1113924, -119.2620033]).addTo(map).bindPopup('Crossroads Resource Center')
+marker = L.marker([48.4219378, -122.3432758]).addTo(map).bindPopup('Pregnancy Choices')
+marker = L.marker([48.292808, -122.642876]).addTo(map).bindPopup('Pregnancy Care Clinic')
+marker = L.marker([48.379174, -119.5631668]).addTo(map).bindPopup('Pregnancy Center Okanogan')
+marker = L.marker([47.0480852, -122.8447046]).addTo(map).bindPopup('Care Net of Thurston County')
+marker = L.marker([47.0481456, -122.9001434]).addTo(map).bindPopup('Care Net of Thurston County')
+marker = L.marker([47.0403097, -122.884845]).addTo(map).bindPopup('Pregnancy Aid of Thurston County')
+marker = L.marker([46.2375351, -119.1193743]).addTo(map).bindPopup('Catholic Family and Child Services')
+marker = L.marker([46.2346155, -119.1070554]).addTo(map).bindPopup('Tri-Cities Pregnancy Network')
+marker = L.marker([48.1095009, -123.4299432]).addTo(map).bindPopup('My Choices Pregnancy & Family Services')
+marker = L.marker([47.5395478, -122.6405921]).addTo(map).bindPopup('Celebrate Life Pregnancy Crisis & Support Services')
+marker = L.marker([47.0969502, -122.2815616]).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
+marker = L.marker([47.4791578, -122.2137966]).addTo(map).bindPopup('LDS Family Services')
+marker = L.marker([46.2753163, -119.2732388]).addTo(map).bindPopup('Catholic Family Services')
+marker = L.marker([46.2737964, -119.2747969]).addTo(map).bindPopup('Tri-Cities Pregnancy Network')
+marker = L.marker([47.7188478, -122.2947777]).addTo(map).bindPopup('Bethany Christian Services')
+marker = L.marker([47.5163713, -122.3596704]).addTo(map).bindPopup('Birthright of Seattle')
+marker = L.marker([47.6012068, -122.3016114]).addTo(map).bindPopup('Catholic Community Services')
+marker = L.marker([47.6012068, -122.3016114]).addTo(map).bindPopup('Pregnancy & Parenting Support Program')
+marker = L.marker([48.086365, -123.1014992]).addTo(map).bindPopup('My Choices Pregnancy & Family Services')
+marker = L.marker([47.2243782, -123.1213084]).addTo(map).bindPopup('Care Net Pregnancy Center of Mason County')
+marker = L.marker([47.7721727, -122.3456496]).addTo(map).bindPopup('Angelorum')
+marker = L.marker([47.6511828, -117.4108068]).addTo(map).bindPopup('Catholic Family Services')
+marker = L.marker([47.6824075, -117.4374161]).addTo(map).bindPopup('Life Services')
+marker = L.marker([47.6574741, -117.4136743]).addTo(map).bindPopup('Lutheran Community Services')
+marker = L.marker([47.6578577, -117.2479875]).addTo(map).bindPopup('LDS Family Services')
+marker = L.marker([46.3240812, -120.0112863]).addTo(map).bindPopup('')
+marker = L.marker([46.3248588, -119.9986963]).addTo(map).bindPopup('Life Options Pregnancy Center')
+marker = L.marker([47.2571124, -122.4549894]).addTo(map).bindPopup('Care Net Pregnancy & Family Services')
+marker = L.marker([47.2548212, -122.4423369]).addTo(map).bindPopup('Pregnancy Aid of Tacoma')
+marker = L.marker([45.634299, -122.6696879]).addTo(map).bindPopup('Birthright')
+marker = L.marker([45.6285429, -122.6487086]).addTo(map).bindPopup('Options 360 Pregnancy Clinic: Vancouver Clinic')
+marker = L.marker([45.6615771, -122.5608727]).addTo(map).bindPopup('Options 360 Pregnancy Clinic: Orchards Clinic')
+marker = L.marker([46.0606172, -118.3453229]).addTo(map).bindPopup('Birthright')
+marker = L.marker([46.0630365, -118.3437206]).addTo(map).bindPopup('Catholic Charities')
+marker = L.marker([47.4179166, -120.314293]).addTo(map).bindPopup('Life Choices of Wenatchee Valley')
+marker = L.marker([47.7619509, -122.1139388]).addTo(map).bindPopup('Special Delivery')
+marker = L.marker([46.5933831, -120.5216844]).addTo(map).bindPopup('Birthright')
+marker = L.marker([46.6083959, -120.5051244]).addTo(map).bindPopup('Catholic Family & Child Services')
+marker = L.marker([46.5939629, -120.5219524]).addTo(map).bindPopup('Life Choices of Yakima');
+
+
+
+/*
+	var circle = L.circle([51.508, -0.11], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.5,
+		radius: 500
+	}).addTo(map).bindPopup('I am a circle.');
+
+	var polygon = L.polygon([
+		[51.509, -0.08],
+		[51.503, -0.06],
+		[51.51, -0.047]
+	]).addTo(map).bindPopup('I am a polygon.');
+
+
+	var popup = L.popup()
+		.setLatLng([51.513, -0.09])
+		.setContent('I am a standalone popup.')
+		.openOn(map);
+
+	function onMapClick(e) {
+		popup
+			.setLatLng(e.latlng)
+			.setContent('You clicked the map at ' + e.latlng.toString())
+			.openOn(map);
+	}*/
+
+	map.on('click', onMapClick);
+
+</script>
+
+
+
+</body>
+</html>
+
